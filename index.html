@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple Hello World static website with modern design">
+    <meta name="author" content="Hello World Static">
+    <title>Hello World</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
+    
+    <!-- Background elements -->
+    <div class="background-container" aria-hidden="true">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+    
+    <!-- Main content -->
+    <main id="main-content" class="main-container">
+        <div class="content-wrapper">
+            <!-- Header section -->
+            <header class="header">
+                <div class="logo-container">
+                    <span class="logo-emoji" role="img" aria-label="Waving hand">👋</span>
+                </div>
+            </header>
+            
+            <!-- Hero section -->
+            <section class="hero-section">
+                <h1 class="hero-title">
+                    <span class="title-line">Hello</span>
+                    <span class="title-line title-highlight">World</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Welcome to a modern, responsive static website built with clean HTML, CSS, and JavaScript.
+                </p>
+                
+                <!-- Interactive buttons -->
+                <div class="button-group">
+                    <button class="btn btn-primary" id="greetBtn" aria-describedby="greet-description">
+                        Say Hello
+                    </button>
+                    <button class="btn btn-secondary" id="themeBtn" aria-label="Toggle theme">
+                        <span class="theme-icon">🌙</span>
+                        <span class="theme-text">Dark Mode</span>
+                    </button>
+                </div>
+                
+                <!-- Hidden description for screen readers -->
+                <div id="greet-description" class="sr-only">
+                    Click to see a personalized greeting message
+                </div>
+            </section>
+            
+            <!-- Features section -->
+            <section class="features-section" aria-labelledby="features-title">
+                <h2 id="features-title" class="section-title">Features</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon" role="img" aria-label="Responsive design">📱</div>
+                        <h3 class="feature-title">Responsive</h3>
+                        <p class="feature-description">Mobile-first design that works on all devices</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon" role="img" aria-label="Modern design">✨</div>
+                        <h3 class="feature-title">Modern</h3>
+                        <p class="feature-description">Clean UI with smooth animations and transitions</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon" role="img" aria-label="Accessible">♿</div>
+                        <h3 class="feature-title">Accessible</h3>
+                        <p class="feature-description">Built with accessibility best practices in mind</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Greeting display area -->
+            <section class="greeting-section" id="greetingSection" aria-live="polite" aria-atomic="true">
+                <!-- Dynamic greeting content will be inserted here -->
+            </section>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">
+                Made with <span role="img" aria-label="heart">❤️</span> using HTML, CSS & JavaScript
+            </p>
+            <p class="footer-copyright">
+                &copy; <span id="currentYear">2024</span> Hello World Static
+            </p>
+        </footer>
+    </main>
+    
+    <!-- Loading indicator -->
+    <div class="loading-indicator" id="loadingIndicator" aria-hidden="true">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Toast notification container -->
+    <div class="toast-container" id="toastContainer" aria-live="assertive" aria-atomic="true">
+        <!-- Toast messages will be inserted here -->
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    
+    <!-- Initialize current year -->
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
